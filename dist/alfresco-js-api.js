@@ -99,7 +99,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+/* WEBPACK VAR INJECTION */(function(process, console) {
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
 
@@ -109,7 +109,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
-var Emitter = __webpack_require__(13);
+var Emitter = __webpack_require__(14);
 var ApiClient = __webpack_require__(1);
 var superagent = __webpack_require__(127);
 var Storage = __webpack_require__(211);
@@ -399,8 +399,12 @@ var AlfrescoApiClient = function (_ApiClient) {
             this.setCsrfToken(request);
         }
 
+        console.log('xxxxx isWithCredentials?');
         if (this.isWithCredentials()) {
+            console.log('isWithCredentials? yes');
             request.withCredentials();
+        } else {
+            console.log('isWithCredentials? no');
         }
 
         // add cookie for activiti
@@ -471,7 +475,7 @@ var AlfrescoApiClient = function (_ApiClient) {
 
 Emitter(AlfrescoApiClient.prototype); // jshint ignore:line
 module.exports = AlfrescoApiClient;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(439)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(439), __webpack_require__(13)))
 
 /***/ }),
 /* 1 */
@@ -2003,6 +2007,25 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(global) {var console;
+if (typeof global !== "undefined" && global.console) {
+    console = global.console
+} else if (typeof window !== "undefined" && window.console) {
+    console = window.console
+} else {
+    console = window.console = {}
+}
+module.exports = console;
+for(var name in {log:1, info:1, error:1, warn:1, dir:1, trace:1, assert:1, time:1, timeEnd: 1})
+	if(!console[name])
+		console[name] = function() {};
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(126)))
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -2139,7 +2162,7 @@ exports.methods = methods;
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2213,7 +2236,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2264,25 +2287,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
   return exports;
 });
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {var console;
-if (typeof global !== "undefined" && global.console) {
-    console = global.console
-} else if (typeof window !== "undefined" && window.console) {
-    console = window.console
-} else {
-    console = window.console = {}
-}
-module.exports = console;
-for(var name in {log:1, info:1, error:1, warn:1, dir:1, trace:1, assert:1, time:1, timeEnd: 1})
-	if(!console[name])
-		console[name] = function() {};
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(126)))
 
 /***/ }),
 /* 17 */
@@ -16027,7 +16031,7 @@ request.put = function(url, data, fn) {
   return req;
 };
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)))
 
 /***/ }),
 /* 128 */
@@ -31361,7 +31365,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(14), __webpack_require__(6), __webpack_require__(307), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(6), __webpack_require__(307), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -33029,7 +33033,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(14), __webpack_require__(95), __webpack_require__(6), __webpack_require__(98), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(95), __webpack_require__(6), __webpack_require__(98), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -33599,7 +33603,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(14), __webpack_require__(6), __webpack_require__(332), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(6), __webpack_require__(332), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -34140,7 +34144,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(14), __webpack_require__(337), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(337), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -34840,7 +34844,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(14), __webpack_require__(6), __webpack_require__(345), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(6), __webpack_require__(345), __webpack_require__(4)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -39357,7 +39361,7 @@ var AlfrescoActivitiApi = __webpack_require__(478);
 var AlfrescoContent = __webpack_require__(540);
 var AlfrescoNode = __webpack_require__(541);
 var AlfrescoUpload = __webpack_require__(542);
-var Emitter = __webpack_require__(13);
+var Emitter = __webpack_require__(14);
 var EcmAuth = __webpack_require__(543);
 var BpmAuth = __webpack_require__(544);
 var Oauth2Auth = __webpack_require__(545);
@@ -39911,7 +39915,7 @@ module.exports.Discovery = AlfrescoDiscoveryRestApi;
 module.exports.Search = AlfrescoSearchRestApi;
 module.exports.GsCore = AlfrescoGsCoreRestApi;
 module.exports.GsClassification = AlfrescoGsClassificationRestApi;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)))
 
 /***/ }),
 /* 396 */
@@ -41445,7 +41449,7 @@ RequestBase.prototype._setTimeouts = function() {
   }
 };
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)))
 
 /***/ }),
 /* 403 */
@@ -52638,7 +52642,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(14), __webpack_require__(95), __webpack_require__(9), __webpack_require__(301), __webpack_require__(96), __webpack_require__(310), __webpack_require__(42), __webpack_require__(311), __webpack_require__(10), __webpack_require__(304), __webpack_require__(6), __webpack_require__(97), __webpack_require__(93), __webpack_require__(312), __webpack_require__(313), __webpack_require__(314), __webpack_require__(315), __webpack_require__(98), __webpack_require__(99), __webpack_require__(316), __webpack_require__(100), __webpack_require__(317), __webpack_require__(318), __webpack_require__(43), __webpack_require__(319), __webpack_require__(320), __webpack_require__(44), __webpack_require__(101), __webpack_require__(321), __webpack_require__(322), __webpack_require__(323), __webpack_require__(325), __webpack_require__(326), __webpack_require__(327), __webpack_require__(102), __webpack_require__(328), __webpack_require__(329), __webpack_require__(332), __webpack_require__(330), __webpack_require__(103), __webpack_require__(333), __webpack_require__(334), __webpack_require__(338), __webpack_require__(337), __webpack_require__(335), __webpack_require__(339), __webpack_require__(340), __webpack_require__(104), __webpack_require__(341), __webpack_require__(342), __webpack_require__(345), __webpack_require__(343), __webpack_require__(346), __webpack_require__(347), __webpack_require__(94), __webpack_require__(302), __webpack_require__(303), __webpack_require__(308), __webpack_require__(307), __webpack_require__(305), __webpack_require__(309), __webpack_require__(4), __webpack_require__(324), __webpack_require__(331), __webpack_require__(336), __webpack_require__(344), __webpack_require__(306), __webpack_require__(468), __webpack_require__(469), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(474), __webpack_require__(475), __webpack_require__(476), __webpack_require__(467)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(95), __webpack_require__(9), __webpack_require__(301), __webpack_require__(96), __webpack_require__(310), __webpack_require__(42), __webpack_require__(311), __webpack_require__(10), __webpack_require__(304), __webpack_require__(6), __webpack_require__(97), __webpack_require__(93), __webpack_require__(312), __webpack_require__(313), __webpack_require__(314), __webpack_require__(315), __webpack_require__(98), __webpack_require__(99), __webpack_require__(316), __webpack_require__(100), __webpack_require__(317), __webpack_require__(318), __webpack_require__(43), __webpack_require__(319), __webpack_require__(320), __webpack_require__(44), __webpack_require__(101), __webpack_require__(321), __webpack_require__(322), __webpack_require__(323), __webpack_require__(325), __webpack_require__(326), __webpack_require__(327), __webpack_require__(102), __webpack_require__(328), __webpack_require__(329), __webpack_require__(332), __webpack_require__(330), __webpack_require__(103), __webpack_require__(333), __webpack_require__(334), __webpack_require__(338), __webpack_require__(337), __webpack_require__(335), __webpack_require__(339), __webpack_require__(340), __webpack_require__(104), __webpack_require__(341), __webpack_require__(342), __webpack_require__(345), __webpack_require__(343), __webpack_require__(346), __webpack_require__(347), __webpack_require__(94), __webpack_require__(302), __webpack_require__(303), __webpack_require__(308), __webpack_require__(307), __webpack_require__(305), __webpack_require__(309), __webpack_require__(4), __webpack_require__(324), __webpack_require__(331), __webpack_require__(336), __webpack_require__(344), __webpack_require__(306), __webpack_require__(468), __webpack_require__(469), __webpack_require__(470), __webpack_require__(471), __webpack_require__(472), __webpack_require__(473), __webpack_require__(474), __webpack_require__(475), __webpack_require__(476), __webpack_require__(467)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -55097,7 +55101,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(356), __webpack_require__(357), __webpack_require__(358), __webpack_require__(359), __webpack_require__(484), __webpack_require__(105), __webpack_require__(22), __webpack_require__(106), __webpack_require__(360), __webpack_require__(362), __webpack_require__(107), __webpack_require__(363), __webpack_require__(364), __webpack_require__(108), __webpack_require__(46), __webpack_require__(109), __webpack_require__(110), __webpack_require__(365), __webpack_require__(111), __webpack_require__(366), __webpack_require__(367), __webpack_require__(368), __webpack_require__(369), __webpack_require__(370), __webpack_require__(485), __webpack_require__(486), __webpack_require__(12), __webpack_require__(112), __webpack_require__(373), __webpack_require__(113), __webpack_require__(114), __webpack_require__(375), __webpack_require__(376), __webpack_require__(374), __webpack_require__(24), __webpack_require__(377), __webpack_require__(47), __webpack_require__(116), __webpack_require__(371), __webpack_require__(378), __webpack_require__(45), __webpack_require__(379), __webpack_require__(11), __webpack_require__(487), __webpack_require__(488), __webpack_require__(489), __webpack_require__(490), __webpack_require__(117), __webpack_require__(15), __webpack_require__(372), __webpack_require__(380), __webpack_require__(118), __webpack_require__(119), __webpack_require__(48), __webpack_require__(491), __webpack_require__(115), __webpack_require__(381), __webpack_require__(382), __webpack_require__(361), __webpack_require__(120), __webpack_require__(383), __webpack_require__(23), __webpack_require__(2), __webpack_require__(121), __webpack_require__(122), __webpack_require__(384), __webpack_require__(385), __webpack_require__(123), __webpack_require__(386), __webpack_require__(492), __webpack_require__(49), __webpack_require__(387), __webpack_require__(388), __webpack_require__(389), __webpack_require__(124), __webpack_require__(390), __webpack_require__(391), __webpack_require__(392), __webpack_require__(25), __webpack_require__(393), __webpack_require__(125), __webpack_require__(493), __webpack_require__(494), __webpack_require__(495), __webpack_require__(496), __webpack_require__(497), __webpack_require__(498), __webpack_require__(499), __webpack_require__(500), __webpack_require__(501), __webpack_require__(502), __webpack_require__(503), __webpack_require__(504), __webpack_require__(505), __webpack_require__(506), __webpack_require__(507), __webpack_require__(508), __webpack_require__(509), __webpack_require__(510), __webpack_require__(511), __webpack_require__(512), __webpack_require__(513), __webpack_require__(514), __webpack_require__(515), __webpack_require__(516), __webpack_require__(517), __webpack_require__(518), __webpack_require__(519), __webpack_require__(521), __webpack_require__(522), __webpack_require__(523), __webpack_require__(524), __webpack_require__(525), __webpack_require__(526), __webpack_require__(527), __webpack_require__(528), __webpack_require__(529), __webpack_require__(530), __webpack_require__(531), __webpack_require__(533), __webpack_require__(534), __webpack_require__(535), __webpack_require__(536), __webpack_require__(537), __webpack_require__(538), __webpack_require__(539), __webpack_require__(479)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(356), __webpack_require__(357), __webpack_require__(358), __webpack_require__(359), __webpack_require__(484), __webpack_require__(105), __webpack_require__(22), __webpack_require__(106), __webpack_require__(360), __webpack_require__(362), __webpack_require__(107), __webpack_require__(363), __webpack_require__(364), __webpack_require__(108), __webpack_require__(46), __webpack_require__(109), __webpack_require__(110), __webpack_require__(365), __webpack_require__(111), __webpack_require__(366), __webpack_require__(367), __webpack_require__(368), __webpack_require__(369), __webpack_require__(370), __webpack_require__(485), __webpack_require__(486), __webpack_require__(12), __webpack_require__(112), __webpack_require__(373), __webpack_require__(113), __webpack_require__(114), __webpack_require__(375), __webpack_require__(376), __webpack_require__(374), __webpack_require__(24), __webpack_require__(377), __webpack_require__(47), __webpack_require__(116), __webpack_require__(371), __webpack_require__(378), __webpack_require__(45), __webpack_require__(379), __webpack_require__(11), __webpack_require__(487), __webpack_require__(488), __webpack_require__(489), __webpack_require__(490), __webpack_require__(117), __webpack_require__(16), __webpack_require__(372), __webpack_require__(380), __webpack_require__(118), __webpack_require__(119), __webpack_require__(48), __webpack_require__(491), __webpack_require__(115), __webpack_require__(381), __webpack_require__(382), __webpack_require__(361), __webpack_require__(120), __webpack_require__(383), __webpack_require__(23), __webpack_require__(2), __webpack_require__(121), __webpack_require__(122), __webpack_require__(384), __webpack_require__(385), __webpack_require__(123), __webpack_require__(386), __webpack_require__(492), __webpack_require__(49), __webpack_require__(387), __webpack_require__(388), __webpack_require__(389), __webpack_require__(124), __webpack_require__(390), __webpack_require__(391), __webpack_require__(392), __webpack_require__(25), __webpack_require__(393), __webpack_require__(125), __webpack_require__(493), __webpack_require__(494), __webpack_require__(495), __webpack_require__(496), __webpack_require__(497), __webpack_require__(498), __webpack_require__(499), __webpack_require__(500), __webpack_require__(501), __webpack_require__(502), __webpack_require__(503), __webpack_require__(504), __webpack_require__(505), __webpack_require__(506), __webpack_require__(507), __webpack_require__(508), __webpack_require__(509), __webpack_require__(510), __webpack_require__(511), __webpack_require__(512), __webpack_require__(513), __webpack_require__(514), __webpack_require__(515), __webpack_require__(516), __webpack_require__(517), __webpack_require__(518), __webpack_require__(519), __webpack_require__(521), __webpack_require__(522), __webpack_require__(523), __webpack_require__(524), __webpack_require__(525), __webpack_require__(526), __webpack_require__(527), __webpack_require__(528), __webpack_require__(529), __webpack_require__(530), __webpack_require__(531), __webpack_require__(533), __webpack_require__(534), __webpack_require__(535), __webpack_require__(536), __webpack_require__(537), __webpack_require__(538), __webpack_require__(539), __webpack_require__(479)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -62837,7 +62841,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
     if (true) {
         // AMD. Register as an anonymous module.
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(16)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -63017,7 +63021,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(117), __webpack_require__(15), __webpack_require__(2), __webpack_require__(125)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(117), __webpack_require__(16), __webpack_require__(2), __webpack_require__(125)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -64777,7 +64781,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(119), __webpack_require__(2), __webpack_require__(15)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(119), __webpack_require__(2), __webpack_require__(16)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -65562,7 +65566,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(49), __webpack_require__(532), __webpack_require__(46), __webpack_require__(15), __webpack_require__(109), __webpack_require__(120), __webpack_require__(386), __webpack_require__(2), __webpack_require__(24), __webpack_require__(12), __webpack_require__(108), __webpack_require__(122), __webpack_require__(387)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(49), __webpack_require__(532), __webpack_require__(46), __webpack_require__(16), __webpack_require__(109), __webpack_require__(120), __webpack_require__(386), __webpack_require__(2), __webpack_require__(24), __webpack_require__(12), __webpack_require__(108), __webpack_require__(122), __webpack_require__(387)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -66673,7 +66677,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
   return exports;
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)))
 
 /***/ }),
 /* 532 */
@@ -66819,7 +66823,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 (function (root, factory) {
   if (true) {
     // AMD. Register as an anonymous module.
-    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(15), __webpack_require__(49)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0), __webpack_require__(16), __webpack_require__(49)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -68815,7 +68819,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var AlfrescoCoreRestApi = __webpack_require__(50);
-var Emitter = __webpack_require__(13);
+var Emitter = __webpack_require__(14);
 
 var AlfrescoUpload = function (_AlfrescoCoreRestApi$) {
     _inherits(AlfrescoUpload, _AlfrescoCoreRestApi$);
@@ -68924,7 +68928,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var AlfrescoAuthRestApi = __webpack_require__(348);
 var AlfrescoApiClient = __webpack_require__(0);
-var Emitter = __webpack_require__(13);
+var Emitter = __webpack_require__(14);
 
 var EcmAuth = function (_AlfrescoApiClient) {
     _inherits(EcmAuth, _AlfrescoApiClient);
@@ -69147,7 +69151,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var AlfrescoApiClient = __webpack_require__(0);
-var Emitter = __webpack_require__(13);
+var Emitter = __webpack_require__(14);
 
 var BpmAuth = function (_AlfrescoApiClient) {
     _inherits(BpmAuth, _AlfrescoApiClient);
@@ -69374,7 +69378,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var AlfrescoApiClient = __webpack_require__(0);
-var Emitter = __webpack_require__(13);
+var Emitter = __webpack_require__(14);
 var rs = __webpack_require__(546);
 
 var Oauth2Auth = function (_AlfrescoApiClient) {
@@ -70384,7 +70388,7 @@ exports.lang = KJUR.lang;
 
 
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(26).Buffer, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(26).Buffer, __webpack_require__(13)))
 
 /***/ }),
 /* 547 */
